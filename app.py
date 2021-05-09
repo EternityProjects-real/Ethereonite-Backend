@@ -77,6 +77,7 @@ def load_user(id):
     return BlockUser.query.get(int(id))
 
 
+
 # rough code to create blockkey
 # @app.route('/', methods = ['GET', 'POST'])
 # def index():
@@ -105,11 +106,6 @@ def index():
             return render_template('test.html', current_value = current_value)
 
     return render_template('test.html', current_value = contracts.retrievevalue())
-
-
-# @app.route('/', methods = ['GET', 'POST'])
-# def index():
-#     return '''Testing'''
 
 
 @app.route('/nfts', methods = ['GET', 'POST'])
@@ -155,9 +151,6 @@ def makepayment():
 
         if remark:
             crowd = BlockOpen.query.all()[0]
-            # print("wow")
-            print(crowd)
-            # print("wow")
             crowd.target_required = crowd.target_required - int(value)
             db.session.commit()
 
