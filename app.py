@@ -155,9 +155,9 @@ def makepayment():
 
         if remark:
             crowd = BlockOpen.query.all()[0]
-            print("wow")
+            # print("wow")
             print(crowd)
-            print("wow")
+            # print("wow")
             crowd.target_required = crowd.target_required - int(value)
             db.session.commit()
 
