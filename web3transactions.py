@@ -22,11 +22,3 @@ def make_transaction(account_sender, account_reciver, private_key, value, gas):
     tx_hash = web3.eth.send_raw_transaction(signed_tx.rawTransaction)
 
     return web3.toHex(tx_hash)
-
-# print(tx_hash)
-
-# account_sender = '0x36c24B559C92C291fc00AB2a532bc6E637BDB212'
-
-# account_reciver = '0x28Bf8D65bbD01644d78431557991b462061f2A89'
-
-# private_key = '89cb18eb38f895e19055255d1a1c22c0f38d2bb5ac0db377d077e724ac61c3d8'

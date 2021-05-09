@@ -7,6 +7,8 @@ import json
 
 import web3transactions as web3tx
 
+import web3smartcontracts as contracts
+
 
 with open("info.json", "r") as c:
     parameters = json.load(c)["parameters"]
@@ -90,8 +92,24 @@ def load_user(id):
 
 @app.route('/', methods = ['GET', 'POST'])
 def index():
-    ##make apis here
-    return '''Welcome to etherionite '''
+    if request.method == 'POST':
+        amount = request.form.get('amount')
+        amount_sell = request.form.get('amount_sell')
+
+        if amount:
+            current_value = contracts.buy_coinvalue(int(amount))
+            return render_template('test.html', current_value = current_value)
+
+        if amount_sell:
+            current_value = contracts.sell_coinvalue(int(amount_sell))
+            return render_template('test.html', current_value = current_value)
+
+    return render_template('test.html', current_value = contracts.retrievevalue())
+
+
+# @app.route('/', methods = ['GET', 'POST'])
+# def index():
+#     return '''Testing'''
 
 
 @app.route('/nfts', methods = ['GET', 'POST'])
@@ -145,7 +163,8 @@ def makepayment():
 
         if private_key_value == current_user.private_key:
             hash_returned = web3tx.make_transaction(current_user.addres_key, account_reciver, current_user.private_key, value, gas)
-            return render_template('index.html', user = current_user, hash_returned = hash_returned)
+            return redirect("http://localhost:3000/Dapp")
+            # return render_template('index.html', user = current_user, hash_returned = hash_returned)
 
     return render_template('index.html', user = current_user)
 
