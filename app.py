@@ -5,9 +5,9 @@ from flask_sqlalchemy import SQLAlchemy
 from werkzeug.utils import secure_filename
 import json
 
-import web3transactions as web3tx
+# import web3transactions as web3tx
 
-import web3smartcontracts as contracts
+# import web3smartcontracts as contracts
 
 
 with open("info.json", "r") as c:
@@ -197,6 +197,10 @@ def signup():
     blocks = Blockkey.query.all()
     return render_template('login.html', blocks = blocks)
 
+@app.route('/yo', methods = ['GET', 'POST'])
+def yo():
+    blockkey = Blockkey.query.all()
+    return render_template('yo.html', blockkey = blockkey)
 
 if __name__ == '__main__':
     app.run(debug = True, threaded = True)

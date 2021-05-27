@@ -68,13 +68,20 @@ Feel free to send a Pull Request! 😄
 **Steps for installing**
 ```
 
+git clone https://github.com/EternityProjects-real/Ethereonite-Backend.git
+cd Ethereonite-Backend
 pip install virtualenv
 virtualenv env
-env\Scripts\activate
+.\env\Scripts\activate
 pip install -r requirements.txt
+## to run flask app 
+python app.py
 
 ```
 
+## Devfolio link!
+**Project on devfolio can be found [here](https://devfolio.co/submissions/ethereonite-77bc).**<br>
+**Top 15 at [frost hack 2021](https://frosthack2021.devfolio.co/submissions).**
 
 ## Libraries
 [Web3.py](https://web3py.readthedocs.io/en/stable/) <br>
