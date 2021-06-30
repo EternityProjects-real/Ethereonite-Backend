@@ -82,6 +82,7 @@ python app.py
 ## Devfolio link!
 **Project on devfolio can be found [here](https://devfolio.co/submissions/ethereonite-77bc).**<br>
 **Top 15 at [frost hack 2021](https://frosthack2021.devfolio.co/submissions).**
+**Polygon Special Track Winners**
 
 ## Libraries
 [Web3.py](https://web3py.readthedocs.io/en/stable/) <br>
